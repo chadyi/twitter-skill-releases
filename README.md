@@ -117,7 +117,7 @@ If macOS still reports that the verified app is damaged, remove the quarantine a
 sudo xattr -dr com.apple.quarantine "/Applications/Twitter Skill.app"
 ```
 
-Open the app again after the command completes. Do not disable Gatekeeper globally. See [this macOS troubleshooting summary](https://sysin.org/blog/macos-if-crashes-when-opening/) for screenshots and additional context.
+Open the app again after the command completes. Do not disable Gatekeeper globally. If the checksum does not match or macOS still blocks the app, delete that copy and download it again from the official GitHub Release.
 
 ### The Agent cannot find `twitter-skill`
 

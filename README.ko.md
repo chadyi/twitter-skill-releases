@@ -117,7 +117,7 @@ Twitter Skill은 사용자가 로그인한 X 웹 세션을 사용하며 X 공식
 sudo xattr -dr com.apple.quarantine "/Applications/Twitter Skill.app"
 ```
 
-명령이 완료되면 앱을 다시 여세요. Gatekeeper를 시스템 전체에서 비활성화하지 마세요. 화면 예시와 추가 설명은 [macOS 문제 해결 요약](https://sysin.org/blog/macos-if-crashes-when-opening/)을 참고하세요.
+명령이 완료되면 앱을 다시 여세요. Gatekeeper를 시스템 전체에서 비활성화하지 마세요. 체크섬이 일치하지 않거나 macOS가 계속 차단하면 해당 파일을 삭제하고 공식 GitHub Release에서 다시 다운로드하세요.
 
 ### Agent가 `twitter-skill`을 찾지 못함
 

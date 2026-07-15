@@ -117,7 +117,7 @@ Twitter Skill 使用用户已经登录的 X 网页会话，不使用 X 官方 AP
 sudo xattr -dr com.apple.quarantine "/Applications/Twitter Skill.app"
 ```
 
-命令完成后重新打开应用。不要全局关闭 Gatekeeper。截图和更多背景说明见：[macOS 提示：“应用程序” 已损坏，无法打开的解决方法总结](https://sysin.org/blog/macos-if-crashes-when-opening/)。
+命令完成后重新打开应用。不要全局关闭 Gatekeeper。如果校验值不一致，或者执行后仍被 macOS 阻止，请删除当前文件并从官方 GitHub Release 重新下载。
 
 ### Agent 找不到 `twitter-skill`
 
