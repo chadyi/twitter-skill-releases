@@ -107,6 +107,18 @@ Twitter Skill はログイン済みの X Web セッションを利用し、X 公
 
 ## トラブルシューティング
 
+### macOS で「アプリケーションが壊れているため開けません」と表示される
+
+まず、同じ Release の `SHA256SUMS.txt` とダウンロードしたファイルを照合してください。アプリを `/Applications` に移動し、右クリックして **開く** を選択します。新しい macOS では、**システム設定 > プライバシーとセキュリティ** から **このまま開く** を選択することもできます。
+
+検証済みのアプリが引き続き壊れていると表示される場合は、このアプリだけの隔離属性を削除します。
+
+```bash
+sudo xattr -dr com.apple.quarantine "/Applications/Twitter Skill.app"
+```
+
+コマンド完了後にもう一度アプリを開いてください。Gatekeeper をシステム全体で無効にしないでください。画像付きの説明と詳細は、[macOS のトラブルシューティングまとめ](https://sysin.org/blog/macos-if-crashes-when-opening/)を参照してください。
+
 ### Agent が `twitter-skill` を検出できない
 
 `npx skills list -g` を実行し、Skill を再インストールしてから Agent を再起動してください。

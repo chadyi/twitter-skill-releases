@@ -107,6 +107,18 @@ Each release also contains update metadata, blockmaps, a macOS ZIP used by the u
 
 ## Troubleshooting
 
+### macOS says the app is damaged and cannot be opened
+
+First compare the downloaded file with `SHA256SUMS.txt` in the same Release. Move the app to `/Applications`, then right-click it and choose **Open**. On recent macOS versions, you can also open **System Settings > Privacy & Security** and choose **Open Anyway**.
+
+If macOS still reports that the verified app is damaged, remove the quarantine attribute from this app only:
+
+```bash
+sudo xattr -dr com.apple.quarantine "/Applications/Twitter Skill.app"
+```
+
+Open the app again after the command completes. Do not disable Gatekeeper globally. See [this macOS troubleshooting summary](https://sysin.org/blog/macos-if-crashes-when-opening/) for screenshots and additional context.
+
 ### The Agent cannot find `twitter-skill`
 
 Run `npx skills list -g`, reinstall the Skill, then restart the Agent so it reloads global Skills.

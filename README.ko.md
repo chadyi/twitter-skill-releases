@@ -107,6 +107,18 @@ Twitter Skill은 사용자가 로그인한 X 웹 세션을 사용하며 X 공식
 
 ## 문제 해결
 
+### macOS에서 앱이 손상되어 열 수 없다고 표시됨
+
+먼저 같은 Release의 `SHA256SUMS.txt`와 다운로드한 파일을 비교하세요. 앱을 `/Applications`로 이동한 다음 마우스 오른쪽 버튼으로 클릭하고 **열기**를 선택하세요. 최신 macOS에서는 **시스템 설정 > 개인정보 보호 및 보안**에서 **확인 없이 열기**를 선택할 수도 있습니다.
+
+검증된 앱이 계속 손상되었다고 표시되면 이 앱의 격리 속성만 제거하세요.
+
+```bash
+sudo xattr -dr com.apple.quarantine "/Applications/Twitter Skill.app"
+```
+
+명령이 완료되면 앱을 다시 여세요. Gatekeeper를 시스템 전체에서 비활성화하지 마세요. 화면 예시와 추가 설명은 [macOS 문제 해결 요약](https://sysin.org/blog/macos-if-crashes-when-opening/)을 참고하세요.
+
 ### Agent가 `twitter-skill`을 찾지 못함
 
 `npx skills list -g`를 실행하고 Skill을 다시 설치한 뒤 Agent를 재시작하여 전역 Skills를 다시 불러오세요.
