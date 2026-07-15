@@ -103,7 +103,7 @@ Download the latest version from [Releases](https://github.com/chadyi/twitter-sk
 | Windows x64 | `Twitter-Skill-<version>-x64.exe` |
 | macOS Universal | `Twitter-Skill-<version>-universal.dmg` |
 
-Each release also contains update metadata, blockmaps, a macOS ZIP used by the updater, and `SHA256SUMS.txt`. The desktop app checks this public repository for updates and downloads matching platform assets in the background.
+Each release also contains update metadata, blockmaps, a macOS ZIP reserved for signed updates, and `SHA256SUMS.txt`. Windows downloads and installs updates automatically. The current unsigned macOS build only checks for a newer version; click **Go to download** in the app and install the latest DMG manually. macOS automatic installation will remain disabled until releases are signed and notarized with Apple Developer credentials.
 
 ## Troubleshooting
 

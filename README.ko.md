@@ -103,7 +103,7 @@ Twitter Skill은 사용자가 로그인한 X 웹 세션을 사용하며 X 공식
 | Windows x64 | `Twitter-Skill-<version>-x64.exe` |
 | macOS Universal | `Twitter-Skill-<version>-universal.dmg` |
 
-각 Release에는 자동 업데이트 메타데이터, blockmap, macOS 업데이트용 ZIP 및 `SHA256SUMS.txt`도 포함됩니다. 데스크톱 앱은 이 공개 저장소에서 업데이트를 확인합니다.
+각 Release에는 업데이트 메타데이터, blockmap, 서명된 업데이트용으로 예약된 macOS ZIP 및 `SHA256SUMS.txt`도 포함됩니다. Windows는 업데이트를 자동으로 다운로드하고 설치합니다. 현재 macOS 빌드는 Apple Developer 인증서로 서명되지 않았으므로 새 버전만 확인합니다. 앱에서 **다운로드로 이동**을 클릭한 뒤 최신 DMG를 수동으로 설치하세요. Apple 서명과 공증을 설정하기 전까지 macOS 자동 설치는 비활성화됩니다.
 
 ## 문제 해결
 

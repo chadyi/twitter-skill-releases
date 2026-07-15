@@ -103,7 +103,7 @@ Twitter Skill 使用用户已经登录的 X 网页会话，不使用 X 官方 AP
 | Windows x64 | `Twitter-Skill-<version>-x64.exe` |
 | macOS Universal | `Twitter-Skill-<version>-universal.dmg` |
 
-每个 Release 还包含自动更新元数据、blockmap、macOS 更新用 ZIP 和 `SHA256SUMS.txt`。桌面客户端会从这个公开仓库检查更新，并在后台下载对应平台的文件。
+每个 Release 还包含更新元数据、blockmap、预留给签名更新使用的 macOS ZIP 和 `SHA256SUMS.txt`。Windows 会自动下载和安装更新。当前 macOS 构建未使用 Apple Developer 证书签名，因此只检查新版本；在客户端点击“前往下载”，再手动安装最新 DMG。配置 Apple 签名和公证前，不启用 macOS 自动安装。
 
 ## 常见问题
 
