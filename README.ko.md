@@ -109,15 +109,20 @@ Twitter Skill은 사용자가 로그인한 X 웹 세션을 사용하며 X 공식
 
 ### macOS에서 앱이 손상되어 열 수 없다고 표시됨
 
-먼저 같은 Release의 `SHA256SUMS.txt`와 다운로드한 파일을 비교하세요. 앱을 `/Applications`로 이동한 다음 마우스 오른쪽 버튼으로 클릭하고 **열기**를 선택하세요. 최신 macOS에서는 **시스템 설정 > 개인정보 보호 및 보안**에서 **확인 없이 열기**를 선택할 수도 있습니다.
+먼저 같은 Release의 `SHA256SUMS.txt`와 다운로드한 파일을 비교하고 `Twitter Skill.app`을 `/Applications`로 이동하세요. 그런 다음 아래 순서대로 진행하세요.
 
-검증된 앱이 계속 손상되었다고 표시되면 이 앱의 격리 속성만 제거하세요.
+1. App Store 외부에서 다운로드한 앱 설치를 허용합니다.
+   - macOS Ventura 13 이상: **시스템 설정 > 개인정보 보호 및 보안 > 보안**을 열고, 다운로드한 앱 허용 항목에서 **App Store 및 확인된 개발자**를 선택합니다.
+   - macOS Monterey 12 이하: **시스템 환경설정 > 보안 및 개인정보 보호 > 일반**을 열고 잠금을 해제한 다음 같은 항목을 선택합니다.
+2. 터미널을 열고 Twitter Skill의 격리 속성만 제거합니다.
 
 ```bash
 sudo xattr -dr com.apple.quarantine "/Applications/Twitter Skill.app"
 ```
 
-명령이 완료되면 앱을 다시 여세요. Gatekeeper를 시스템 전체에서 비활성화하지 마세요. 체크섬이 일치하지 않거나 macOS가 계속 차단하면 해당 파일을 삭제하고 공식 GitHub Release에서 다시 다운로드하세요.
+3. `Twitter Skill.app`을 다시 여세요. macOS가 계속 차단하면 같은 보안 설정 화면으로 돌아가 **확인 없이 열기**를 클릭한 다음 **열기**를 다시 확인하세요.
+
+Gatekeeper를 시스템 전체에서 비활성화하지 마세요. 체크섬이 일치하지 않으면 해당 파일을 삭제하고 공식 GitHub Release에서 다시 다운로드하세요.
 
 ### Agent가 `twitter-skill`을 찾지 못함
 

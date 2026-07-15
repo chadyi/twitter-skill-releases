@@ -109,15 +109,20 @@ Each release also contains update metadata, blockmaps, a macOS ZIP used by the u
 
 ### macOS says the app is damaged and cannot be opened
 
-First compare the downloaded file with `SHA256SUMS.txt` in the same Release. Move the app to `/Applications`, then right-click it and choose **Open**. On recent macOS versions, you can also open **System Settings > Privacy & Security** and choose **Open Anyway**.
+First compare the downloaded file with `SHA256SUMS.txt` in the same Release and move `Twitter Skill.app` to `/Applications`. Then follow these steps in order:
 
-If macOS still reports that the verified app is damaged, remove the quarantine attribute from this app only:
+1. Allow apps downloaded from outside the App Store.
+   - macOS Ventura 13 or later: open **System Settings > Privacy & Security > Security**, then select **App Store and identified developers** under **Allow applications downloaded from**.
+   - macOS Monterey 12 or earlier: open **System Preferences > Security & Privacy > General**, unlock the page, then select **App Store and identified developers**.
+2. Open Terminal and remove the quarantine attribute from Twitter Skill only:
 
 ```bash
 sudo xattr -dr com.apple.quarantine "/Applications/Twitter Skill.app"
 ```
 
-Open the app again after the command completes. Do not disable Gatekeeper globally. If the checksum does not match or macOS still blocks the app, delete that copy and download it again from the official GitHub Release.
+3. Open `Twitter Skill.app` again. If macOS still blocks it, return to the same **Privacy & Security** or **Security & Privacy** page, click **Open Anyway**, and confirm **Open**.
+
+Do not disable Gatekeeper globally. If the checksum does not match, delete that copy and download it again from the official GitHub Release.
 
 ### The Agent cannot find `twitter-skill`
 

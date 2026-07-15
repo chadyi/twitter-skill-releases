@@ -109,15 +109,20 @@ Twitter Skill 使用用户已经登录的 X 网页会话，不使用 X 官方 AP
 
 ### macOS 提示“应用程序已损坏，无法打开”
 
-先使用同一 Release 中的 `SHA256SUMS.txt` 核对下载文件。把应用移动到 `/Applications`，然后右键点击应用并选择“打开”。在新版 macOS 中，也可以进入“系统设置 > 隐私与安全性”，点击“仍要打开”。
+先使用同一 Release 中的 `SHA256SUMS.txt` 核对下载文件，并把 `Twitter Skill.app` 移动到 `/Applications`。然后严格按下面的顺序操作：
 
-如果已经确认文件校验值正确，但仍然提示损坏，只清除这个应用的隔离属性：
+1. 打开“允许安装非 App Store 应用”。
+   - macOS Ventura 13 及以上：进入“系统设置 > 隐私与安全性 > 安全性”，在“允许从以下位置下载的应用程序”中选择“App Store 与已知开发者”。
+   - macOS Monterey 12 及以下：进入“系统偏好设置 > 安全性与隐私 > 通用”，点击左下角锁图标解锁，然后选择“App Store 和被认可的开发者”。
+2. 打开“终端”，只清除 Twitter Skill 的隔离属性：
 
 ```bash
 sudo xattr -dr com.apple.quarantine "/Applications/Twitter Skill.app"
 ```
 
-命令完成后重新打开应用。不要全局关闭 Gatekeeper。如果校验值不一致，或者执行后仍被 macOS 阻止，请删除当前文件并从官方 GitHub Release 重新下载。
+3. 再次打开 `Twitter Skill.app`。如果仍被 macOS 阻止，回到刚才的“隐私与安全性”或“安全性与隐私”页面，点击“仍要打开”，然后再次确认“打开”。
+
+不要全局关闭 Gatekeeper。如果校验值不一致，请删除当前文件并从官方 GitHub Release 重新下载。
 
 ### Agent 找不到 `twitter-skill`
 
